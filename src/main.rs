@@ -26,3 +26,9 @@ fn main() {
         );
     }
 }
+
+fn brightness_to_char(brightness: f64) -> char {
+    let ascii = ['@', '#', '%', '*', '+', '=', '-', ':', '.'];
+    let index = ((brightness / 255.0) * (ascii.len() - 1) as f64).round() as usize;
+    ascii[index]
+}
